@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+<link rel="stylesheet" href="/admin/css/reset.css">
+<link rel="stylesheet" href="/admin/css/common.css">
+<link rel="stylesheet" href="/admin/css/inquiry.css"><!---신규추가--->
+<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+<script src="/admin/js/calendar.js"></script>
+<script src="/admin/js/layer_popup.js"></script>
+<script src="/admin/js/inquiry_dropdown.js"></script><!---신규추가--->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<title>테니스아레나 조회관리</title>
+</head>
+<!---
+퍼블리싱 class 및 태그 부가 설명
+class 이름 나열
+
+관계예약 : rsv_admin
+일반예약 : rsv_user
+관계레슨 & 일반레슨: less
+
+※ (A,B,실외)_리스트 있을시 
+1) .inquiry_table td 에 해당 class 추가
+2) td안에 ul li 추가
+<ul class="inquiry_list">
+    <li>현도</li>
+  </ul>
+
+※ (C코트)_리스트 있을시
+1) .inquiry_table td 에 해당 class 추가
+2) td안에 ul li 추가 (C코트에만 30분씩 나눔)
+<ul class="inquiry_list ul_name_00"><!---관계레슨일시->
+   <li class="ul_name_admin">정주리정</li>
+   <li class="ul_name_admin">정주리정</li>
+</ul>
+
+<p class="border_line"></p><!--라인 추가->
+
+<ul class="inquiry_list ul_name_30"><!---일반레슨일시->
+   <li class="ul_name_user">현도</li>
+   <li class="ul_name_user">현도</li>
+</ul>
+           
+           
+※ (공통 코트별)_리스트 없을시
+기본형태 <td></td>
+--->
+
+<body>
+<header class="top_header"><div role="header" data-include-path="/admin/common/header.html"></div></header>
+<div role="nav_left" data-include-path="/admin/common/nav_left.html"></div>
+<section class="tab_box inquiry">
+    <div class="nav_right">조회관리 > <span class="color_point_01">현황조회</span></div>
+        <h3>테니스 아레나 예약 및 레슨 현황</h3> 
+        <div class="date_box_set">
+        <ul class="left_ul">
+            <li><button class="all_line_btn">▼ 전체 열기</button></li>
+            <li><button class="xls_btn" type="button" onClick=""><img src="/admin/img/icon_xls.png">엑셀 다운로드</button></li>
+            
+        </ul>
+        
+        <ul class="color_info">
+            <li class="rsv_admin_color">관계예약</li>
+            <li class="rsv_user_color">일반예약</li>
+            <!--<li class="rsv_admin_color">관계예약</li>-->
+            <li class="less_color"><span class="ul_name_admin">관계레슨</span></li>
+            <li class="less_color"><span class="ul_name_user">일반레슨</span></li>
+        </ul>
+        <ul class="right_ul">
+            <li>
+                <h4>기간조회 : </h4>
+                 <input type="text" id="datepicker" placeholder="0000-00-00"> ~ <input type="text" id="datepicker2" placeholder="0000-00-00">
+                <button type="button" onclick="" class="btn_set">조회</button>
+            </li>
+         </ul>
+    </div>
+    <div class="right_set">
+        <div class="caption"><button type="button" onClick="" class="btn-prev">&lsaquo;</button>2021년 7월<button type="button" onClick="" class="btn_next">&rsaquo;</button></div>
+        <table class="inquiry_table" id="table_01">
+           <colgroup>
+                <col style="width:38px">
+                <col >
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+           <thead>
+                <tr>
+                    <th colspan="2" rowspan="2">시간</th>
+                    <th colspan="4">월(28) <button class="tr_line_01">▼</button></th>
+                    <th colspan="4">화(29) <button class="tr_line_02">▼</button></th>
+                    <th colspan="4">수(30) <button class="tr_line_03">▼</button></th>
+                    <th colspan="4">목(01) <button class="tr_line_04">▼</button></th>
+                    <th colspan="4">금(02) <button class="tr_line_05">▼</button></th>
+                    <th colspan="4">토(03) <button class="tr_line_06">▼</button></th>
+                    <th colspan="4">일(04) <button class="tr_line_07">▼</button></th>
+                </tr>
+
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="wapper">
+                    <td colspan="2">6시</td>
+                    <td class="rsv_user">
+                       <ul class="inquiry_list">
+                           <li>현도</li>
+                       </ul>
+                    </td>
+                    <td class="rsv_admin">
+                        <ul class="inquiry_list">
+                           <li>정주리정</li>
+                           <li>정주리정</li>
+                           <li>정주리정</li>
+                       </ul>
+                    </td>
+                    <td class="less">
+                        <ul class="inquiry_list ul_name_00">
+                           <li class="ul_name_admin">정주리정</li>
+                           <li class="ul_name_admin">정주리정</li>
+                           <li class="ul_name_admin">정주리정</li>
+                       </ul>
+                       
+                        <p class="border_line"></p>
+                        <ul class="inquiry_list ul_name_30">
+                           <li class="ul_name_user">현도</li>
+                           <li class="ul_name_user">현도</li>
+                       </ul>
+                    </td>
+                    <td class="rsv_admin">
+                       <ul class="inquiry_list">
+                           <li>현도</li>
+                       </ul>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="wapper">
+                    <td colspan="2">7시</td>
+                    <td></td>
+                    <td></td>
+                    <td class="less">
+                        <ul class="inquiry_list ul_name_00">
+                           <li class="ul_name_admin">정주리정</li>
+                           <li class="ul_name_admin">정주리정</li>
+                       </ul>
+                        <p class="border_line"></p>
+                        <ul class="inquiry_list ul_name_30">
+                           <li class="ul_name_user">현도</li>
+                           <li class="ul_name_user">현도</li>
+                       </ul>
+                    </td>
+                    <td></td>
+                    <td class="rsv_user">
+                       <ul class="inquiry_list">
+                           <li>현도</li>
+                       </ul>
+                    </td>
+                    <td class="rsv_admin">
+                        <ul class="inquiry_list">
+                           <li>정주리정</li>
+                           <li>정주리정</li>
+                           <li>정주리정</li>
+                       </ul>
+                    </td>
+                    <td class="less">
+                        <ul class="inquiry_list ul_name_00">
+                           <li class="ul_name_admin">정주리정</li>
+                           <li class="ul_name_admin">정주리정</li>
+                           <li class="ul_name_admin">정주리정</li>
+                       </ul>
+                       
+                        <p class="border_line"></p>
+                        <ul class="inquiry_list ul_name_30">
+                           <li class="ul_name_user">현도</li>
+                           <li class="ul_name_user">현도</li>
+                       </ul>
+                    </td>
+                    <td class="rsv_admin">
+                       <ul class="inquiry_list">
+                           <li>현도</li>
+                       </ul>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="wapper">
+                    <td colspan="2">8시</td>
+                    <td class="rsv_user">
+                       <ul class="inquiry_list">
+                           <li>현도</li>
+                       </ul>
+                    </td>
+                    <td class="rsv_admin">
+                        <ul class="inquiry_list">
+                           <li>정주리정</li>
+                           <li>정주리정</li>
+                           <li>정주리정</li>
+                       </ul>
+                    </td>
+                    <td class="less">
+                        <ul class="inquiry_list ul_name_00">
+                           <li class="ul_name_admin">정주리정</li>
+                           <li class="ul_name_admin">정주리정</li>
+                           <li class="ul_name_admin">정주리정</li>
+                       </ul>
+                       
+                        <p class="border_line"></p>
+                        <ul class="inquiry_list ul_name_30">
+                           <li class="ul_name_user">현도</li>
+                           <li class="ul_name_user">현도</li>
+                       </ul>
+                    </td>
+                    <td class="rsv_admin">
+                       <ul class="inquiry_list">
+                           <li>현도</li>
+                       </ul>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="wapper">
+                    <td colspan="2">9시</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="rsv_user">
+                       <ul class="inquiry_list">
+                           <li>현도</li>
+                       </ul>
+                    </td>
+                    <td class="rsv_admin">
+                        <ul class="inquiry_list">
+                           <li>정주리정</li>
+                           <li>정주리정</li>
+                           <li>정주리정</li>
+                       </ul>
+                    </td>
+                    <td class="less">
+                        <ul class="inquiry_list ul_name_00">
+                           <li class="ul_name_admin">정주리정</li>
+                           <li class="ul_name_admin">정주리정</li>
+                           <li class="ul_name_admin">정주리정</li>
+                       </ul>
+                       
+                        <p class="border_line"></p>
+                        <ul class="inquiry_list ul_name_30">
+                           <li class="ul_name_user">현도</li>
+                           <li class="ul_name_user">현도</li>
+                       </ul>
+                    </td>
+                    <td class="rsv_admin">
+                       <ul class="inquiry_list">
+                           <li>현도</li>
+                       </ul>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <!--
+        <table class="inquiry_table" id="table_02">
+           <colgroup>
+                <col style="width:38px">
+                <col >
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+           <thead>
+                <tr>
+                    <th colspan="2" rowspan="2">시간</th>
+                    <th colspan="4">월(28)</th>
+                    <th colspan="4">화(29)</th>
+                    <th colspan="4">수(30)</th>
+                    <th colspan="4">목(01)</th>
+                </tr>
+
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>실외</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="wapper">
+                    <td colspan="2">6시</td>
+                    <td class="less_user">
+                        <span class="name_00">정주리정</span>
+                        <p class="border_line"></p>
+                        <span class="name_30">전현도</span>
+                    </td>
+                    <td class="less_admin">
+                        <p class="border_line"></p>
+                    </td>
+                    <td class="rsv_user">
+                        <p class="border_line"></p>
+                    </td>
+                    <td class="rsv_admin">
+                        <p class="border_line"></p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="wapper">
+                    <td colspan="2">7시</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="wapper">
+                    <td colspan="2">8시</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="wapper">
+                    <td colspan="2">9시</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>-->
+    </div>
+</section>
+<footer><div role="footer" data-include-path="/admin/common/footer.html"></div></footer>
+<script src="/admin/js/html_load.js"></script>
+</body>
+</html>>>

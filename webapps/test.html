@@ -1,0 +1,31 @@
+<html>
+<head>
+<title> macaddress </title>
+
+
+<script type="text/javascript">
+
+function road_init(){
+	var obj = new ActiveXObject("WbemScripting.SWbemLocator"); 
+	var s = obj.ConnectServer("."); 
+	var properties = s.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration"); 
+	var e = new Enumerator(properties); 
+	var output; 
+	var Counter = 0; 
+	while (!e.atEnd()) { 
+	    
+	    var p = e.item(); 
+	    if (!p) continue;
+	
+	    alert(p.Caption);
+	    alert(p.MACAddress);
+
+	    e.moveNext(); 
+	} 
+}
+</script>
+
+</head>
+<body onload=road_init()>
+</body>
+</html>

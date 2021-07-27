@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="/js/jquery-1.11.3.min.js"></script> 
+<script src="/js/main_v2.js"></script><!--추가(기존파일에서 필요부분 나눈 파일 _v2)--->
+  
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+<script src="../js/sub_tab.js"></script><!--파일추가--->
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/sub.css"><!--파일추가--->
+<title>오시는길</title>
+
+</head>
+<body>
+<header class="top_header" role="header" data-include="/common/header.html"></header>
+<div class="sub_top">
+    <div class="tab_box"><h1>오시는길</h1></div>
+   <ul class="tab_page tab_li_02 tab_box">
+       <li onClick="location.href='/sub/rent.html'"><a>대관안내</a></li>
+       <!--<li onClick="location.href='/sub/membership.html'"><a>멤버쉽안내</a></li>-->
+       <li class="on"  onClick="location.href='/sub/directions.html'"><a>오시는길</a></li>
+   </ul>
+</div>
+<section class="tab_box">
+    <div class="sub_page_body">
+       
+        <div class="tab_con" id="tab_con">
+            <div>
+               <div class="directions_box">
+                   <!----지도삽입--------->
+               </div>
+               <p>경기 김포시 월곶면 갈산리 140-32 </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer role="footer" data-include="/common/footer.html"></footer>
+</body>
+</html>

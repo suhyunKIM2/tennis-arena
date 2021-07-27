@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="/js/jquery-1.11.3.min.js"></script> 
+<script src="/js/main_v2.js"></script><!--추가(기존파일에서 필요부분 나눈 파일 _v2)--->
+  
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+<!--<script src="../js/sub_tab.js"></script>파일추가--->
+<script src="/js/slick.js"></script><!--20210702추가--->	
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/sub.css"><!--파일추가--->
+<link rel="stylesheet" href="/css/slick.css"><!--20210702파일추가--->
+<title>시설소개</title>
+<!---20210702추가----->
+<script> 
+
+ 
+$(document).ready(function () {	
+	var $slickElement = $('.bxslider');
+	var $slickElementS = $('.bxslider_S');
+    $slickElement.slick({
+        autoplay: true,
+        autoplaySpeed:4000,
+        speed: 1000,  
+        dots: false,
+        fade:true,
+        touchMove : false,
+        swipe : true,
+        pauseOnHover:true,
+        prevArrow: '<div class="main_s_arrow slick-prev"><i class="icon-left-open-big"><img src="/img/btn_detail_left.png"></i></div>',
+        nextArrow: '<div class="main_s_arrow slick-next"><i class="icon-right-open-big"><img src="/img/btn_detail_right.png"></i></div>'
+    });
+	
+	$slickElementS.slick({
+        autoplay: true,
+        autoplaySpeed:4000,
+        speed: 1000,  
+        dots: false,
+        fade:true,
+        touchMove : false,
+        swipe : true,
+        pauseOnHover:true,
+        prevArrow: '<div class="main_s_arrow slick-prev"><i class="icon-left-open-big"><img src="/img/btn_detail_left.png"></i></div>',
+        nextArrow: '<div class="main_s_arrow slick-next"><i class="icon-right-open-big"><img src="/img/btn_detail_right.png"></i></div>'
+    });
+
+    /*다른 tab 이동시 이미지로딩 느린 오류 보완 추가 20210701추가*/
+   $('#play').click(function(){
+        $slickElement.slick('slickPlay');
+    });
+    $('#stop').click(function(){
+        $slickElement.slick('slickPause');
+    });
+ });
+
+
+</script>
+</head>
+<body>
+<header class="top_header" role="header" data-include="/common/header.html"></header>
+<div class="sub_top">
+    <div class="tab_box"><h1>시설 소개</h1></div>
+   <ul class="tab_page tab_li_02 tab_box">
+       <li onClick="location.href='/sub/facilities_guide.html'"><a>테니스장 소개</a></li>
+       <li class="on" onClick="location.href='/sub/lounge.html'"><a>시설 소개</a></li>
+   </ul>
+</div>
+<section class="tab_box">
+    <div class="sub_page_body">
+       
+        <ul class="tab" id="tab">
+            <li ><a href="/sub/lounge.html" id="play" >라운지</a></li>			
+            <li class="on"><a href="/sub/lounge_02.html" id="stop" >스트링서비스</a></li>
+            <li><a href="/sub/lounge_03.html" id="stop" >주차시설</a></li>
+            <li><a href="/sub/lounge_04.html" id="play_S" >샤워시설</a></li>
+        </ul>
+        <div class="tab_con" id="tab_con">
+            	
+            <div>
+                <img src="/img/sub/img/05_2.jpg" class="pc_img table_rowspan_img">
+                <img src="/img/sub/img/m_05_2.jpg" class="mo_img">
+                <table class="table_rowspan table_rowspan_02">
+                    <colgroup>
+                        <col width="30%">
+                        <col width="70%">
+                    </colgroup>
+                    <tr>
+                        <th rowspan='1'>스트링<br>서비스</th>
+                        <td><span class="table_rowspan_span_block"><span class="right_centents"> 전 세계 최고의 브랜드 윌슨에서 만든 스트링 머신 </span>
+                        </span></td>
+                    </tr>
+                </table>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+<footer role="footer" data-include="/common/footer.html"></footer>
+</body>
+</html>

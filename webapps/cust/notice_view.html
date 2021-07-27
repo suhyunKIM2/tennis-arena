@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="/js/jquery-1.11.3.min.js"></script> 
+<script src="/js/main_v2.js"></script><!--추가(기존파일에서 필요부분 나눈 파일 _v2)--->
+  
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/common.css"><!--파일수정--->
+<link rel="stylesheet" href="/css/cust.css"><!--파일추가--->
+<title>테니스 아레나 공지사항</title>
+
+</head>
+<body>
+<header class="top_header" role="header" data-include="/common/header.html"></header>
+
+<section class="tab_box">
+    <div class="notice_box_body">
+        <h1>공지사항</h1>
+        <table class="notice_table notice_table_view">
+            <colgroup>
+                <col style="width:75%" >
+                <col style="width:25%" >
+            </colgroup>
+            <tr>
+                <td>홈페이지 오픈 일정 안내</td>
+                <td>2021.05.26</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                   공지사항 내용 들어 가는 자리
+                   공지내용입니다~~
+                </td>
+            </tr>
+        </table>
+        <ol class="list_view_history">
+            <li class="view_prev">
+                <a href="#">
+                    <span><b>&and;</b> 이전글</span>
+                    <font>대관료 안내</font>
+                </a>
+            </li> 
+            <li class="view_next">
+                <a href="#">
+                    <span><b>&or;</b> 다음글</span>
+                    <font>레슨안내</font>
+                </a>
+            </li>
+        </ol>
+        
+        <div class="btn_body">
+            <button type="button" onClick="location.href='/cust/notice_list.html'" class="btn_common">목록</button>
+        </div>
+    </div>
+ 
+</section>
+
+<footer role="footer" data-include="/common/footer.html"></footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.xls_btn{background: #479e7a;color: #fff;border: 1px solid #000;padding: 5px 10px;font-weight: 600;}
+.all_line_btn{background: #1570ad;color: #fff;border: 1px solid #000;padding: 5px 10px;font-weight: 600;height:30px;}
+.all_close_off{background: #eee;color: #1570ad;border: 1px solid #000;padding: 5px 10px;font-weight: 600;height:30px;}
+.inquiry_table button{border:1px solid #afafaf;background:#eee;border-radius:5px;color: #007ed8;}
+.inquiry h3{text-align: center;}
+.inquiry_table{width:100%;min-width: 1400px;overflow: auto;}
+.caption{margin-bottom:1%;text-align: center;}
+.inquiry_table tr,.inquiry_table th,.inquiry_table td{border:1px solid #efefef;text-align: center;font-size: 13px;border-left: 0;}
+#table_01{border-left:1px solid #c5c5c5;}
+#table_02{border-left:0;}
+.inquiry_table tr:first-child th:first-child,.inquiry_table tr td:first-child{background:#fff1e5;}
+.inquiry_table td{width:3.4%;height:auto;overflow:hidden;font-weight: 600;font-size:13px;line-height:normal;padding:2px 0;}
+.inquiry_table td.rsv_user{background:#ffbbc0;}
+.inquiry_table td.rsv_admin{background:#ffe499;}
+.inquiry_table td.less{background:#39a98f;}
+.inquiry_table td.less .ul_name_admin{color: #d7f7f1;}
+.inquiry_table td.less .ul_name_user{color: #000;font-weight: 600;}
+.inquiry_table td .ul_name_admin{width:100%;height:50%;}
+.inquiry_table td .ul_name_user{width:100%;height:50%;}
+.inquiry_table td .inquiry_list li{display:block;font-size:11px;font-weight: 500;}
+.inquiry_table td .inquiry_list li:nth-child(n+3){visibility: hidden;line-height: 0;display: none;}
+.inquiry_table td p.border_line{display:none;}
+.inquiry_table td.less p.border_line,.inquiry_table td.less_admin p.border_line,.inquiry_table td.rsv_user p.border_line,.inquiry_table td.rsv_admin p.border_line{
+display:block;border-bottom:1px dotted #000;width: 80%;margin: 10% auto 5%;
+}
+.inquiry_table td .drop_btn{background:#fff;border:1px solid #fff;width:95%;    margin: 0 auto 2px;font-size: 10px; }
+.inquiry_table td .inquiry_list_visible  li:nth-child(n+3){visibility: visible;line-height: normal;display:block;}
+.inquiry_table td:nth-of-type(4n+2){border-left:2px solid #000;}
+.inquiry_table th{border:2px solid #000;}
+.inquiry_table tr:nth-child(2) th:nth-of-type(4n+1){border-left:2px solid #000;}
+.inquiry_table tr:first-child th:first-child, .inquiry_table th:last-child{border-left:0;border-right:0;}
+.inquiry_table tbody,.inquiry_table thead{border-bottom:2px solid #000;}
+.inquiry_table tr:nth-child(2) th{border:1px solid #efefef;}
+.tab_box .date_box_set{margin:0 0 0 2.5%;overflow:auto;padding-right: 2.5%;}
+.tab_box .date_box_set ul{width:50%;}
+.tab_box .date_box_set .left_ul{float:left;text-align: left;}
+.tab_box .date_box_set .left_ul li{text-align:left;display:inline-block;width:auto;vertical-align: middle;}
+.tab_box .date_box_set .right_ul{float:right;    text-align: right;clear: both;width:100%;}
+.tab_box .date_box_set .right_ul li{}
+.tab_box .date_box_set .color_info{text-align:right;float:right;}
+.tab_box .date_box_set .color_info li{width:auto;display: inline-block;padding: 2px 17px;font-size: 12px;}
+.tab_box .date_box_set .color_info li.rsv_admin_color{background:#ffe499;}
+.tab_box .date_box_set .color_info li.rsv_user_color{background:#ffbbc0;}
+.tab_box .date_box_set .color_info li.less_color{background:#39a98f;color:#fff;}
+/*.tab_box .date_box_set .color_info li.rsv_admin_color{background:#97d5ff;}*/
+.tab_box .date_box_set .color_info li.less_color span.ul_name_admin{color:#d7f7f1;}
+.tab_box .date_box_set .color_info li.less_color span.ul_name_user{color:#000;font-weight: 600;}

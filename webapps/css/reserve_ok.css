@@ -1,0 +1,42 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* latin */
+@font-face {
+  font-family: 'Libre Barcode 128';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/librebarcode128/v16/cIfnMbdUsUoiW3O_hVviCwVjuLtXeK_H9AI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-display: fallback;
+}
+.top_logo{width:90%;height:50px;text-align: left;padding:0 5%;}
+.top_logo img{padding-top: 11px;width: 189px;}
+.container{width: auto;height: 100vh; background:#173f35;position: relative;}
+.reserve_ok_body{width:90%;padding:0 5%;margin:auto;color:#fff;height: calc(100% - 50px);position:relative;}
+.reserve_ok_box{position:relative;height:60%;}
+.reserve_ok_position{position:absolute;top:50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-ms-transform: translateY(-50%);-o-transform: translateY(-50%);-z-transform: translateY(-50%);}
+.reserve_ok_contents{margin:50% auto;}
+.reserve_ok_contents li{margin-bottom:18px;}
+.barcode_box{position: absolute;width:100%;height:40%;bottom:0;left:0;background:#fff;color:#000;}
+.bc_contents{position:relative;width:100%;height:100%;overflow:hidden;}
+.barcode_box .bc{position: absolute;left:50%;top:50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);-moz-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);-o-transform: translate(-50%, -50%);-z-transform: translate(-50%, -50%);text-align: center;font-family: 'Libre Barcode 128';font-size: 4em;letter-spacing:3px;}
+.number_text{font-size:10px;font-family: 'Roboto';    text-transform: uppercase;margin-top: -25px;letter-spacing:2px;}
+
+@media screen and (max-height: 653px){
+.container{min-height:480px;overflow:auto;}
+.reserve_ok_body h2{font-size:18px;}
+.reserve_ok_contents{margin:25% auto;}
+.reserve_ok_contents li {margin-bottom: 5px;font-size: 14px;}
+}
+
+@media screen and (max-width: 414px){
+.top_logo img {width: 150px;}
+.reserve_ok_position h2{font-size:22px;}
+.reserve_ok_contents li {margin-bottom: 5px;font-size: 14px;}
+}
+
+/* iPad 가로 */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+.reserve_ok_contents{margin:25% auto;}
+}

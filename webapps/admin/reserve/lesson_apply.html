@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+<link rel="stylesheet" href="/admin/css/reset.css">
+<link rel="stylesheet" href="/admin/css/common.css">
+<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+<script src="/admin/js/calendar.js"></script>
+<script src="/admin/js/layer_popup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<title>테니스아레나 레슨관리</title>
+</head>
+<body>
+<header class="top_header"><div role="header" data-include-path="/admin/common/header.html"></div></header>
+<div role="nav_left" data-include-path="/admin/common/nav_left.html"></div>
+<section class="tab_box">
+    <div class="nav_right">레슨관리 > <span class="color_point_01">레슨등록</span></div>
+    <div class="right_set right_apply">
+       <table class="schedule_set lesson_set apply_table">
+           
+            <colgroup>
+                <col width="20%">
+                <col width="80%">
+            </colgroup>
+            <tr class="schedule_lst">
+                <th>코치</th>
+                <td>
+                    <select name="coach">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">신찬휘</option>
+                        <option value="">홍코치</option>
+                        <option value="">박코치</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="schedule_lst">
+                <th>레슨유형</th>
+                <td>
+                    <select name="cash">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">일반</option>
+                        <option value="">원포인트</option>
+                    </select>
+                    <select name="week">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">평일</option>
+                        <option value="">주말</option>
+                    </select>
+                    <select name="worth">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">주1회/ 1:1</option>
+                        <option value="">주2회/ 1:1</option>
+                        <option value="">주1회/ 1:多</option>
+                        <option value="">주2회/ 1:多</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="schedule_lst">
+                <th>레슨자</th>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr class="schedule_lst">
+                <th>연락처</th>
+                <td>
+                    <select name="phone1">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">010</option>
+                        <option value="">016</option>
+                        <option value="">017</option>
+                        <option value="">018</option>
+                        <option value="">019</option>
+                    </select>
+                    <span class="hyphen">-</span>
+                    <input type='tel' name='phone2' /><span class="hyphen">-</span>
+                    <input type='tel' name='phone3' />
+                </td>
+            </tr>
+            <tr class="schedule_lst">
+                <th>레슨기간</th>
+                <td>
+                    <input type="text" id="datepicker" placeholder="0000-00-00"> <span class="hyphen">~</span> <input type="text" id="datepicker2" placeholder="0000-00-00">
+                </td>
+            </tr>
+            <!---------주 1회일때--------------->
+            <tr class="schedule_lst">
+                <th>레슨코트/시간</th>
+                <td>
+                    <select name="cash">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">A코트</option>
+                        <option value="">B코트</option>
+                        <option value="">C코트</option>
+                        <option value="">실외코트</option>
+                    </select>
+                    <select name="week">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">월</option>
+                        <option value="">화</option>
+                        <option value="">수</option>
+                        <option value="">목</option>
+                        <option value="">금</option>
+                        <option value="">토</option>
+                        <option value="">일</option>
+                    </select>
+                    <select name="worth">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">06:00</option>
+                        <option value="">06:30</option>
+                        <option value="">07:00</option>
+                        <option value="">07:30</option>
+                        <option value="">08:00</option>
+                        <option value="">08:30</option>
+                        <option value="">09:00</option>
+                        <option value="">09:30</option>
+                        <option value="">10:00</option>
+                        <option value="">10:30</option>
+                        <option value="">11:00</option>
+                        <option value="">11:30</option>
+                        <option value="">12:00</option>
+                        <option value="">12:30</option>
+                        <option value="">13:00</option>
+                        <option value="">13:30</option>
+                        <option value="">14:00</option>
+                        <option value="">14:30</option>
+                        <option value="">15:00</option>
+                        <option value="">15:30</option>
+                        <option value="">16:00</option>
+                        <option value="">16:30</option>
+                        <option value="">17:00</option>
+                        <option value="">17:30</option>
+                        <option value="">18:00</option>
+                        <option value="">18:30</option>
+                        <option value="">19:00</option>
+                        <option value="">19:30</option>
+                        <option value="">20:00</option>
+                        <option value="">20:30</option>
+                        <option value="">21:00</option>
+                        <option value="">21:30</option>
+                    </select>
+                </td>
+            </tr>
+             <!---------주 1회일때--------------->
+             
+              <!---------주 2회일때- <th rowspan="2"> rowspan 2 추가,추가 리스트 tr td -------------->
+            <tr class="schedule_lst">
+                <th rowspan="2">레슨코트/시간</th>
+                <td>
+                    <select name="cash">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">A코트</option>
+                        <option value="">B코트</option>
+                        <option value="">C코트</option>
+                        <option value="">실외코트</option>
+                    </select>
+                    <select name="week">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">월</option>
+                        <option value="">화</option>
+                        <option value="">수</option>
+                        <option value="">목</option>
+                        <option value="">금</option>
+                        <option value="">토</option>
+                        <option value="">일</option>
+                    </select>
+                    <select name="worth">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">06:00</option>
+                        <option value="">06:30</option>
+                        <option value="">07:00</option>
+                        <option value="">07:30</option>
+                        <option value="">08:00</option>
+                        <option value="">08:30</option>
+                        <option value="">09:00</option>
+                        <option value="">09:30</option>
+                        <option value="">10:00</option>
+                        <option value="">10:30</option>
+                        <option value="">11:00</option>
+                        <option value="">11:30</option>
+                        <option value="">12:00</option>
+                        <option value="">12:30</option>
+                        <option value="">13:00</option>
+                        <option value="">13:30</option>
+                        <option value="">14:00</option>
+                        <option value="">14:30</option>
+                        <option value="">15:00</option>
+                        <option value="">15:30</option>
+                        <option value="">16:00</option>
+                        <option value="">16:30</option>
+                        <option value="">17:00</option>
+                        <option value="">17:30</option>
+                        <option value="">18:00</option>
+                        <option value="">18:30</option>
+                        <option value="">19:00</option>
+                        <option value="">19:30</option>
+                        <option value="">20:00</option>
+                        <option value="">20:30</option>
+                        <option value="">21:00</option>
+                        <option value="">21:30</option>
+                    </select>
+                </td>
+               </tr>
+                <tr>
+                    <td>
+                    <select name="cash">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">A코트</option>
+                        <option value="">B코트</option>
+                        <option value="">C코트</option>
+                        <option value="">실외코트</option>
+                    </select>
+                    <select name="week">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">월</option>
+                        <option value="">화</option>
+                        <option value="">수</option>
+                        <option value="">목</option>
+                        <option value="">금</option>
+                        <option value="">토</option>
+                        <option value="">일</option>
+                    </select>
+                    <select name="worth">
+                        <option value=""  selected="selected">선택</option>
+                        <option value="">06:00</option>
+                        <option value="">06:30</option>
+                        <option value="">07:00</option>
+                        <option value="">07:30</option>
+                        <option value="">08:00</option>
+                        <option value="">08:30</option>
+                        <option value="">09:00</option>
+                        <option value="">09:30</option>
+                        <option value="">10:00</option>
+                        <option value="">10:30</option>
+                        <option value="">11:00</option>
+                        <option value="">11:30</option>
+                        <option value="">12:00</option>
+                        <option value="">12:30</option>
+                        <option value="">13:00</option>
+                        <option value="">13:30</option>
+                        <option value="">14:00</option>
+                        <option value="">14:30</option>
+                        <option value="">15:00</option>
+                        <option value="">15:30</option>
+                        <option value="">16:00</option>
+                        <option value="">16:30</option>
+                        <option value="">17:00</option>
+                        <option value="">17:30</option>
+                        <option value="">18:00</option>
+                        <option value="">18:30</option>
+                        <option value="">19:00</option>
+                        <option value="">19:30</option>
+                        <option value="">20:00</option>
+                        <option value="">20:30</option>
+                        <option value="">21:00</option>
+                        <option value="">21:30</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div style="text-align:center;"><button type="button" onclick="location.href='/admin/reserve/lesson_enrol.html'" class="btn_set btn_set_cancel"> 취소</button><button type="button" onclick="" class="btn_set"> 저장</button></div>
+</section>
+<footer><div role="footer" data-include-path="/admin/common/footer.html"></div></footer>
+<script src="/admin/js/html_load.js"></script>
+</body>
+</html>

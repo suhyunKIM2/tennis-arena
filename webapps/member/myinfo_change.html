@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="/js/jquery-1.11.3.min.js"></script> 
+<script src="/js/main_v2.js"></script><!--추가(기존파일에서 필요부분 나눈 파일 _v2)--->
+  
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+<script src="../js/layer_popup.js"></script>
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/common.css"><!--파일수정--->
+<link rel="stylesheet" href="/css/member.css"><!--파일추가--->
+<link rel="stylesheet" href="/css/layer_popup.css"><!--파일추가--->
+<title>테니스 아레나 회원정보 수정</title>
+
+</head>
+<body>
+<header class="top_header" role="header" data-include="/common/header.html"></header>
+
+<section class="tab_box">
+    <div class="join_body_div">
+        <h3>회원정보 수정</h3>
+        <table class="join_table myinfo_change_table">
+            <colgroup>
+                <col width="20%">
+                <col width="80%">
+            </colgroup>
+            <tr>
+                <th>아이디</th>
+                <td>ididididi</td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="text" class="" ></td>
+            </tr>
+            <tr>
+                <th>비밀번호확인</th>
+                <td><input type="text" class="" ></td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td>홍길동</td>
+            </tr>
+            <tr>
+                <th>연락처</th>
+                <td><input type="text" class="" placeholder="01012345678"></td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td>1989.11.29</td>
+            </tr>
+            <tr class="mail_body_tr">
+                <th>이메일</th>
+                <td><input type="text" class="" placeholder="ssss"> <span class="menu_list_span">@</span> <input type="text" class="" placeholder="naver.com">
+                    <select name="selectEmail" id="selectEmail">
+                        <option value="" selected>직접입력</option> 
+                        <option value="naver.com">naver.com</option>
+                        <option value="hanmail.net">hanmail.net</option>
+                        <option value="hotmail.com">hotmail.com</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="yahoo.co.kr">yahoo.co.kr</option>
+                        <option value="empas.com">empas.com</option>
+                        <option value="dreamwiz.com">dreamwiz.com</option>
+                        <option value="freechal.com">freechal.com</option>
+                        <option value="lycos.co.kr">lycos.co.kr</option>
+                        <option value="korea.com">korea.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="hanmir.com">hanmir.com</option>
+                        <option value="paran.com">paran.com</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button class="btn_submit">저장</button>
+    </div>
+</section>
+
+<footer role="footer" data-include="/common/footer.html"></footer>
+</body>
+</html>

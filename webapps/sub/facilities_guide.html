@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script src="/js/jquery-1.11.3.min.js"></script> 
+<script src="/js/main_v2.js"></script><!--추가(기존파일에서 필요부분 나눈 파일 _v2)--->
+  
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+<script src="../js/sub_tab.js"></script><!--파일추가--->
+<script src="/js/slick.js"></script><!--20210617추가--->
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/sub.css"><!--파일추가--->
+<link rel="stylesheet" href="/css/slick.css"><!--20210617파일추가--->
+<title>테니스장 소개</title>
+<script> 
+$(document).ready(function () {	
+	var $slickElement = $('.bxslider');
+    $slickElement.slick({
+        autoplay: true,
+        autoplaySpeed:4000,
+        speed: 1000,  
+        dots: false,
+        fade:true,
+        touchMove : false,
+        swipe : true,
+        pauseOnHover:true,
+        prevArrow: '<div class="main_s_arrow slick-prev"><i class="icon-left-open-big"><img src="/img/btn_detail_left.png"></i></div>',
+        nextArrow: '<div class="main_s_arrow slick-next"><i class="icon-right-open-big"><img src="/img/btn_detail_right.png"></i></div>'
+    });
+    /*다른 tab 이동시 이미지로딩 느린 오류 보완 추가 20210701추가*/
+    $('#play').click(function(){
+        $slickElement.slick('slickPlay');
+    });
+    $('#stop').click(function(){
+        $slickElement.slick('slickPause');
+    });
+    
+ });
+ 
+ 
+
+</script>
+</head>
+<body>
+<header class="top_header" role="header" data-include="/common/header.html"></header>
+<div class="sub_top">
+    <div class="tab_box"><h1>테니스장 소개</h1></div>
+   <ul class="tab_page tab_li_02 tab_box">
+       <li class="on" onClick="location.href='/sub/facilities_guide.html'"><a>테니스장 소개</a></li>
+       <li onClick="location.href='/sub/lounge.html'"><a>시설 소개</a></li>
+   </ul>
+</div>
+<section class="tab_box">
+    <div class="sub_page_body">
+      
+        <ul class="tab" id="tab"><!--- 20210701 id명 추가---->
+            <li><a href="# " id="play">시설안내</a></li>
+            <li><a href="#" id="stop">주요연락처</a></li>
+            <li><a href="#" id="stop">이용수칙</a></li>
+        </ul>
+        <div class="tab_con" id="tab_con">
+            <div>
+                <div class="table_rowspan set">
+                    <div>
+                        <ul class="bxslider pc">
+                            <li><img src="/img/sub/img/01_bg_e.jpg"></li>
+                            <li><img src="/img/sub/img/02_bg_e.jpg"></li>
+                            <li><img src="/img/sub/img/03_bg_e.jpg"></li>
+                        </ul>
+                        <ul class="bxslider mobile">
+                            <li><img src="/img/sub/img/m_01_bg.jpg"></li>
+                            <li><img src="/img/sub/img/m_02_bg.jpg"></li>
+                            <li><img src="/img/sub/img/m_03_bg.jpg"></li>
+                        </ul>
+                        
+                        <div class="text-box_set">
+                            <h3>테니스코트</h3>
+                            <b>테니스 문화의 새로운 패러다임</b><br>
+                                <span class="color_g">TENNIS ARENA를 소개합니다.</span><br><br>
+                            정식 규격 테니스장 3면을 갖추고 있으며 유럽에서 수입한 '탑 슬라이드' 테니스 코트로 다른 코트보다 몸에 무리가 없으며 내부는 바다를 연상하는 블루 계열 색상으로 시인성이 우수합니다.
+                        </div>
+                    </div>
+                </div>
+               </div>
+            <div>
+                <table class="table_rowspan table_rowspan_02">
+                    <colgroup>
+                        <col width="30%">
+                        <col width="70%">
+                    </colgroup>
+                    <tr>
+                        <th rowspan='3'>연락처 &<br>운영시간</th>
+                        <td><span class="table_rowspan_span_block"><b>대표 번호</b><br>
+                        <span class="color_g">031-989-1427</span>
+                        </span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="table_rowspan_span_block"><b>문의 가능 시간</b><br>
+                        <span class="color_g">평일 09:30 ~ 18:00</span>
+                        <span class="color_g red_font">(점심시간 12:00 ~ 13:00)</span>
+                        </span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="table_rowspan_span_block"><b>운영 시간</b><br>
+                        <span class="color_g">06:00 ~ 22:00</span>
+                        </span></td>
+                    </tr>
+                </table>
+            </div>	
+            <div>
+                <table class="table_rowspan table_rowspan_02">
+                    <colgroup>
+                        <col width="40%">
+                        <col width="60%">
+                    </colgroup>
+                    <tr>
+                        <th rowspan='1'>이용수칙</th>
+                        <td><span class="table_rowspan_span_block"><i class="left_centents">-</i> <span class="right_centents">테니스장 입장 시 반드시 운동복 테니스화를 꼭 착용 해 주세요.</span><br>
+                        <i class="left_centents">-</i> <span class="right_centents">운동 시작 전 부상 방지 준비운동을 해야 합니다.</span><br>
+                        <i class="left_centents">-</i> <span class="right_centents">실내 음주 및 흡연은 절대 금지 입니다.</span><br>
+                        <i class="left_centents">-</i> <span class="right_centents">음주 후 테니스는 삼가 주세요.</span><br>
+                        <i class="left_centents">-</i> <span class="right_centents">시설물 훼손 금지 및 타인에게 불쾌감을 주는 행위는 자제해 주세요.</span><br>
+                        <i class="left_centents">-</i> <span class="right_centents">테니스장 내 음료를 제외한 음식물은 반입 금지 입니다.</span><br>
+                        <i class="left_centents">-</i> <span class="right_centents">운동 중 건강상에 문제가 발생 될 경우 관리자나 지도 선생님에게 도움을 요청 하세요.</span><br>
+                        <i class="left_centents">-</i> <span class="right_centents">테니스장, 라운지, 라커룸 내 소지품 및 귀중품 분실 시 책임지지 않습니다.</span><br>
+                        <i class="left_centents">-</i> <span class="right_centents">소지품 및 귀중품은 직접 소지 부탁드립니다.</span><br>
+                        <i class="left_centents">-</i> <span class="right_centents">운동 중 및 강습 도중 본인 부주의나 타인에 의한 사고는 책임지지 않습니다. 안전에 유의하여 운동 부탁드립니다.</span>
+                        </span></td>
+                    </tr>
+                </table>
+            </div>	
+        </div>
+    </div>
+</section>
+
+
+<footer role="footer" data-include="/common/footer.html"></footer>
+</body>
+</html>

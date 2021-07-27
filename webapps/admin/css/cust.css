@@ -1,0 +1,78 @@
+@charset "utf-8";
+.btn_body{width:100%;margin:0 auto 1%;text-align: right;float:right;}
+.btn_common{background:#173f35;width:153px;border:0;color:#fff;padding:14px 0;cursor: pointer;}
+.radius{border-radius: 50%;padding: 2px 5px;margin-right:5px;}
+.radius_Q{background:#999;color:#fff;}
+.radius_A{background:#173f35;color:#fff;}
+.list_view_history li span.radius_Q{background:#fff;color:#999;padding: 1px 4px;border:1px solid #eee;}
+.notice_table_btn{text-align: center;}
+.btn_list{background:#999;}
+
+
+.notice_box_body{width:100%;}
+.notice_box_body h1{font-size:25px;width:100%;}
+.notice_box_body .notice_table{width:100%;margin:3% 0;border-top:2px solid #000;border-left:0;border-right:0;border-bottom: 1px solid #000;}
+.notice_box_body .notice_table tr{border-bottom:1px solid #eee;cursor: pointer;}
+.notice_box_body .notice_table tr:first-child{border-bottom:1px solid #000;cursor:auto;}
+.notice_box_body .notice_table tr th{padding:1% 0;font-size:15px;}
+.notice_box_body .notice_table tr td{text-align:center;padding:0.8% 0;font-size:13px;}
+.notice_box_body .notice_table tr td:nth-child(2){text-align:left;padding-left:2%;}
+
+.notice_box_body .notice_table.notice_table_view tr{cursor:auto;}
+.notice_box_body .notice_table.notice_table_view tr:last-child{border-bottom:0;}
+.notice_box_body .notice_table.notice_table_view tr:last-child td{height: 4.2857em;}
+.notice_box_body .notice_table.notice_table_view tr:first-child td:first-child {text-align:left;padding-left:2%;}
+
+.notice_table_write_right table tr th{background:#f7f7f7;border-right: 1px solid #999;}
+.notice_table_write_right table tr td input{width:85.8%;height:30px;padding-left: 1%;border:1px solid #b7b7b7;}
+.notice_table_write_right table tr td textarea{width:85%;height:422px;padding: 1%;border:1px solid #b7b7b7;}
+
+.notice_table_write_right table.faq_table_view tr td input{width:85.8%;height:30px;padding-left: 1%;border:1px solid #b7b7b7;}
+.notice_table_write_right table.faq_table_view tr td textarea{width:85%;height:230px;padding: 1%;border:1px solid #b7b7b7;}
+.notice_box_body .faq_table_view.faq_table_write tr:last-child td{padding: 0.8% 0 0.8% 2%;}
+
+.list_view_history{border-top:1px solid #000;}
+.list_view_history li{padding:1% 0;border-bottom:1px solid #eee;font-size:14px;}
+.list_view_history li span{font-weight:600;color: #173f35;padding-left: 2%;}
+.list_view_history li span b{font-size:18px;}
+.list_view_history li font{color:#999;margin-left: 1%;}
+.list_view_history li a:hover font{color:#173f35;}
+.list_view_history li a:hover span.radius_Q{background:#999;color:#fff;border:1px solid #999;}
+
+.notice_box_body .faq_table_view{margin-bottom:0;}
+.notice_box_body .faq_table_view tr:last-child td{padding:0;}
+.notice_box_body .faq_table_view tr td div{text-align:left;padding:2%;height:auto;overflow: hidden;}
+.notice_box_body .faq_table_view tr td .A_box{background:#f7f7f7;border-top:1px dotted #999;padding: 3% 2% 7%;}
+.notice_box_body .faq_table_view tr td .radius{display:inline-block;}
+
+/*★210601 추가★ 시작*/
+.search_box{float:left;width:50%;margin: 1% auto;}
+.btn_body{width:50%;}
+.search_box select{width:80px;}
+.search_box select,.search_box input{padding:6px 2px;}
+.search_box button{padding:6px 0;width:80px;vertical-align: middle;border:1px solid #999;background:#eee;}
+.notice_box_body h1{margin-bottom:15px;}
+/*★210601 추가★ 끝*/
+
+/*★210602 추가★ 시작*/
+.user_name_search_box ul {margin-bottom:10px;    display: inline-block;}
+.user_info li,.user_membership li,.user_search_button li{display: inline-block;}
+.user_info li input{height:25px;margin-left:5px;padding:1px 5px;vertical-align: middle;width: 135px;}
+.user_info li:first-child input{margin-left:0;}
+.user_info li:last-child input{margin-right:5px;}
+.user_membership li select{margin-left:5px;height:31px;padding:1px 5px;vertical-align: middle;}
+.user_membership li:first-child select{margin-left:0;}
+.user_search_button button {padding: 6px 0;width: 80px;vertical-align: middle;border: 1px solid #81ab9f;background: #81ab9f;color:#fff;}
+.search_box{width:70%;}
+.btn_body{width:100%;}/*★20210616 수정★*/
+/*★210602 추가★ 끝*/
+
+/*★210610 추가★ 시작*/
+.btn_td { width:45%;max-width: 70px;height:30px;font-size:13px;display: inline-block; vertical-align: middle; border: 1px solid #e0e0e0;background: #eee;}
+.btn_sns{background:#d8e6e2;}
+.btn_reserve{background:#81ab9f;color:#fff;}
+.notice_box_body .notice_table tr{cursor: default;}
+.notice_box_body .notice_table tr td:nth-child(2){cursor: pointer;}
+/*★210610 추가★ 끝*/
+
+.btn_delete{background:#e6e6e6;color:#000;}

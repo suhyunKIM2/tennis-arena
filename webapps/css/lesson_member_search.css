@@ -1,0 +1,61 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.top_logo{width:90%;height:50px;text-align:left;padding:0 5%;background:#173f35;}
+.top_logo img{padding-top: 11px;width: 189px;}
+.container{width: auto;height: 100vh; background:#fff;position: relative;}
+.lesson_member_body_box{position:absolute;top:50px;left:0;background:#fff;height:auto;overflow:hidden;width: 100%;    border: 1px solid #fff;}
+.lesson_member_body{width:100%;margin:auto;position: relative;height:auto;overflow:hidden;}
+.lesson_member_centents{width: 80%;margin:auto;}
+.lesson_member_centents h2{letter-spacing:-1px;font-size:20px;margin:7% 0 4%;}
+.lesson_member_table{margin:2% auto;;width:100%;border:1px solid #eee;border-bottom:0;}
+.lesson_member_table select{width:70%;height:70px;border:1px solid #999;padding-left:2%;background:#fff;}
+.lesson_member_table input{width:68%;height:70px;border:1px solid #999;padding-left:2%;vertical-align: middle;}
+.lesson_member_table button{width:25%;padding:0 2%;border:1px solid #999;background:#eee;height:74px;vertical-align: middle;margin-left:5px;}
+.lesson_member_table tr {border-bottom:1px solid #eee;}
+.lesson_member_table tr td{padding:5% 0;}
+.lesson_member_table tr td span{display:block;margin-bottom:1%;}
+.lesson_member_table tr td span font.total{color:#c7c7c7;}
+.lesson_member_table tr td span font.residually{color:#559c8a;}
+.button_box{width:100%;text-align: center;padding:5% 0;}
+.submit{border:1px solid #173f35;background:#173f35;width:300px;height:70px;color:#fff;}
+.lesson_member_table tr td span,.submit,.lesson_member_table tr th,.lesson_member_table button,.lesson_member_table input,.lesson_member_table select{font-size:22px;}
+
+@media screen and (max-height: 768px){
+.lesson_member_table tr td{padding:2% 0;}
+.button_box{width:100%;text-align: center;padding:2% 0;}
+}
+
+
+@media screen and (max-height: 653px){
+.container{min-height:480px;overflow:auto;}
+.reserve_ok_body h2{font-size:18px;}
+.reserve_ok_contents{margin:25% auto;}
+.reserve_ok_contents li {margin-bottom: 5px;font-size: 14px;}
+}
+@media screen and (max-width: 1024px){
+.lesson_member_body{width:90%;}
+.lesson_member_centents{width:100%;}
+}
+@media screen and (max-width: 500px){
+.lesson_member_table tr td span,.submit,.lesson_member_table tr th,.lesson_member_table button,.lesson_member_table input,.lesson_member_table select{font-size:12px;}
+.lesson_member_centents h2{font-size:18px;}
+.lesson_member_table select{height:40px;}
+.lesson_member_table input{height:40px;}
+.submit{height:40px;}
+.lesson_member_table button{height:44px;}
+}
+@media screen and (max-width: 414px){
+.top_logo img {width: 150px;}
+.reserve_ok_position h2{font-size:22px;}
+.reserve_ok_contents li {margin-bottom: 5px;font-size: 14px;}
+.submit{width:100%;}
+}
+@media screen and (max-width: 320px){
+.lesson_member_table tr td span,.submit,.lesson_member_table tr th,.lesson_member_table button,.lesson_member_table input,.lesson_member_table select{font-size:11px;}
+.lesson_member_centents h2{font-size:15px;}
+}
+/* iPad 가로 */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+.reserve_ok_contents{margin:25% auto;}
+.lesson_member_table tr td{padding:2% 0;}
+}
