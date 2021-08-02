@@ -1338,7 +1338,7 @@ input[name=check_rsv]{display: inline-block;vertical-align: middle;margin:0 2px;
 
 .schedule_set_02 .layer_wrap table tr td .type_select{width:78%;height: 37px;border: 1px solid #999;}
 
-/*20210729추가*/
+/*20210729추가 시작*/
 .lesson_set_enrol tr td{position:relative;}
 .enrollment_btn{position:absolute;top:0;right:0;cursor: pointer;width:20px;height:20px;background:#000;color:#fff;}
 .tab_box .apply_table{width: 85%;
@@ -1356,6 +1356,8 @@ input[name=check_rsv]{display: inline-block;vertical-align: middle;margin:0 2px;
 .tab_box .apply_table tr td .hyphen{line-height: 33px;}
 .tab_box .lesson_set_enrol ul li a.btn_layer{color:#000;font-weight: 500;}
 .close_btn{position: fixed;width:96%;top:2%;right:2%;text-align: right;cursor:pointer;font-size:25px;color:#000;background:none;padding:0;}
+/*//20210729추가 끝*/
+
 
 @media screen and (max-width: 800px) {
 
