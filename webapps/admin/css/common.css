@@ -1342,10 +1342,10 @@ input[name=check_rsv]{display: inline-block;vertical-align: middle;margin:0 2px;
 .lesson_set_enrol tr td{position:relative;}
 .enrollment_btn{position:absolute;top:0;right:0;cursor: pointer;width:20px;height:20px;background:#000;color:#fff;}
 .tab_box .apply_table{width: 85%;
-    margin: 6% auto;
+    margin:7% auto 5%;
     transform: translate(0, 0);}
 .enrollment_table{width: 50%;
-    height: 90%;
+    height:auto;
     top: 50% !important;
     transform: translate(-50%, -50%);
     left: 50% !important;
@@ -1354,6 +1354,8 @@ input[name=check_rsv]{display: inline-block;vertical-align: middle;margin:0 2px;
 .schedule_set tr.border_0{border-left:0;border-right:0;border-bottom:0;}
 .tab_box .apply_table select, .tab_box .apply_table input,.tab_box .apply_table tr td .hyphen{float:left;}
 .tab_box .apply_table tr td .hyphen{line-height: 33px;}
+.tab_box .lesson_set_enrol ul li a.btn_layer{color:#000;font-weight: 500;}
+.close_btn{position: fixed;width:96%;top:2%;right:2%;text-align: right;cursor:pointer;font-size:25px;color:#000;background:none;padding:0;}
 
 @media screen and (max-width: 800px) {
 
