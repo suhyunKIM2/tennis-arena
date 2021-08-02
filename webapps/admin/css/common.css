@@ -1345,8 +1345,8 @@ input[name=check_rsv]{display: inline-block;vertical-align: middle;margin:0 2px;
     margin:7% auto 5%;
     transform: translate(0, 0);}
 .enrollment_table{width: 50%;min-width: 688px;
-    height:auto;
-    max-height: 600px;
+    height:90%;
+    min-height: 600px;
     top: 50% !important;
     transform: translate(-50%, -50%);
     left: 50% !important;
